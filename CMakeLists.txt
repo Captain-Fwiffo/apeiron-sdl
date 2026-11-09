@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.10)
+project(apeiron_sdl C)
+set(CMAKE_C_STANDARD 11)
+add_library(apeiron_res STATIC src/rsrc.c src/pict.c src/snd.c src/writers.c)
+add_executable(apeiron_export tools/apeiron_export.c)
+target_link_libraries(apeiron_export apeiron_res)
+if(MSVC)
+  target_compile_definitions(apeiron_res PRIVATE _CRT_SECURE_NO_WARNINGS)
+  target_compile_definitions(apeiron_export PRIVATE _CRT_SECURE_NO_WARNINGS)
+endif()
+# The same sources should build on Linux with gcc or clang (not yet tried): cmake -S . -B build && cmake --build build

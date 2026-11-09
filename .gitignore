@@ -1,0 +1,14 @@
+bin/
+out/
+build/
+*.obj
+*.exe
+*.res
+*.bin
+data/
+*.rsrc
+._*
+__MACOSX/
+apeiron_replay_*
+apeiron_hitches.txt
+apeiron_pede.txt
