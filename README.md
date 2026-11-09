@@ -1,5 +1,11 @@
 # apeiron-sdl
 
+This is a functional clone of Apeiron that I used Claude to make. It's functionally identical to the original to the point that it reproduces the same result given the same seed and inputs. It needs the original data files. 
+
+If you're copying from an emulator, the important things are the .rsrc files. Optional bug fixes for bugs in the original are in the .ini files. I would recommend either playing with a high cycle rate or with steady_ticks set to 1. There is a new replay feature; if it is set, your games will produce a .bin file that you can drag onto the .exe to play the recording back. Press Space to pause, + or - to double or halve the speed, 0 to return to normal speed, N to return to a previously marked spot made with F8, and Escape to stop.
+
+Below is Claude's attempt at a readme.
+
 A port of **Apeiron 1.0.2** (Ambrosia Software, 1995, a 68k Macintosh game) to Windows and Linux, written in C with SDL2.
 
 The goal is to play like the original, bugs included. The game logic was written from a Ghidra decompilation of the original program, and each routine was then checked against the original 68k machine code running in the [Musashi](https://github.com/kstenerud/Musashi) emulator (see [Accuracy](#accuracy)). Anything that fixes or changes the original's behaviour is an option in `apeiron.ini` and is off by default.
